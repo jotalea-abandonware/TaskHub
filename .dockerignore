@@ -1,0 +1,21 @@
+# Version control and tooling
+.git
+.gitignore
+.dockerignore
+Dockerfile
+
+# Desktop / Android clients, not part of the web service
+app/
+
+# Docs and local artifacts
+README.md
+LICENSE
+__pycache__/
+*.py[cod]
+
+# Runtime data (created/mutated by the app)
+tareas.db
+*.db
+*.sqlite3
+imagenes/*
+!imagenes/.placeholder

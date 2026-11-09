@@ -24,6 +24,19 @@ Para los desarrolladores interesados en alojar nuestra aplicación, recomendamos
 
 ---------------------------------------
 
+##	Docker
+
+Construir la imagen y ejecutar el servicio:
+
+```bash
+docker build -t taskhub .
+docker run -d --name taskhub -p 81:8000 -e PASSWORD=tu_contrasena -v taskhub-data:/data taskhub
+```
+
+El sitio queda disponible en http://localhost:81. La variable `PASSWORD` es obligatoria para los endpoints `/api/reset` y `/api/delete`, y el volumen `taskhub-data` guarda `tareas.db` y las imágenes subidas, así que al borrar el volumen se pierden todos los datos.
+
+---------------------------------------
+
 # TaskHub (English)
 
 ---------------------------------------
@@ -45,3 +58,16 @@ To enhance user engagement, cookies are employed for storing user preferences, s
 In summary, this web application blends Python, Flask, HTML, CSS, and JavaScript to deliver an intuitive, feature-rich, and responsive educational platform for both contributors and learners.
 
 For developers looking to host our application, we recommend using Replit for its simplicity and ease of deployment. Replit provides a convenient platform that supports Python, Flask, and SQLite out of the box. With its collaborative features, version control, and seamless integration with GitHub, Replit simplifies the development and hosting process. To get started, simply import your project, configure environment variables, and deploy effortlessly with a single click. Replit's reliability and straightforward setup make it an excellent choice for hosting and collaborating on Flask applications.
+
+---------------------------------------
+
+##	Docker
+
+Build the image and run the service:
+
+```bash
+docker build -t taskhub .
+docker run -d --name taskhub -p 81:8000 -e PASSWORD=your_password -v taskhub-data:/data taskhub
+```
+
+The site is then available at http://localhost:81. `PASSWORD` is required by the `/api/reset` and `/api/delete` endpoints, and the `taskhub-data` volume holds `tareas.db` and the uploaded images, so removing the volume deletes all data.
